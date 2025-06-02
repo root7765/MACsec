@@ -30,7 +30,10 @@ echo "🔧 Schritt 7: Build vorbereiten..."
 make modules_prepare
 
 echo "🔨 Schritt 8: Nur macsec.ko bauen..."
+make clean
+make modules_prepare
 make M=net/macsec modules
+
 
 echo "📥 Schritt 9: Modul installieren..."
 sudo mkdir -p /lib/modules/"$KERNEL_VER"/kernel/net/macsec
